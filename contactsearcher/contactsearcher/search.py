@@ -2,6 +2,7 @@
 
 import csv
 
+
 def search_for_email_given_job(job_description: str, contacts: str):
     """Search for and return job(s) given an email address."""
     # create an empty list of the contacts
