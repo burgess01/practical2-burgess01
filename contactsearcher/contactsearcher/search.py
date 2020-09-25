@@ -1,8 +1,6 @@
 """Search for an email address given a fragment of a job description."""
 
-# TODO: Add the required import for the csv module to support the
-# parsing of the contact database stored in the provided file
-
+import csv
 
 def search_for_email_given_job(job_description: str, contacts: str):
     """Search for and return job(s) given an email address."""
@@ -18,7 +16,10 @@ def search_for_email_given_job(job_description: str, contacts: str):
         quoting=csv.QUOTE_ALL,
         skipinitialspace=True,
     ):
-        # TODO: extract the current job for the contact on this line of the CSV
-        # TODO: the job description matches and thus we should save it in the list
+        # extract the current job for the contact on this line of the CSV
+        current_contact_job = contact_line[1]
+        # the job description matches and thus we should save it in the list
+        if job_description in current_contact_job.lower():
+            contacts_list.append(contact_line)
     # return the list of the contacts who have a job description that matches
     return contacts_list
