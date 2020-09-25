@@ -45,9 +45,9 @@ def main(
     # if no contacts were found, then display a suitable statement
     if len(contacts_list) == 0:
         typer.echo("Sorry, we could not find any contacts who have your desired job! Try again!")
+    # if contacts were found, then display a suitable statement 
     else:
         typer.echo("Wow, we found some contacts! Email them to learn about your job!")
-    #  if contacts were found, then display a suitable statement
 
 
 if __name__ == "__main__":
